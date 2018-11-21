@@ -3,8 +3,12 @@
     <div class="pos-f-t">
         <div class="collapse" id="navbarToggleExternalContent">
           <div class="bg-dark p-4">
-            <h5 class="text-white h4">Collapsed content</h5>
-            <span class="text-muted">Toggleable via the navbar brand.</span>
+              <a href="/#/"> ALL RECORDS</a><br>
+              <a href="">ADD YOUR RECORDS</a><br>
+              <a href="/#/signup">SIGNUP</a><br>
+              <a href="/#/login">LOGIN</a><br>
+              <a href="/#/">LOGOUT</a>
+            <span class="text-muted"></span>
           </div>
         </div>
         <nav class="navbar navbar-dark bg-dark">

@@ -21,7 +21,7 @@
               <h3 class="card-title">{{ product.name }}</h3>
               <p class="card-price">$ {{ product.price }}</p>
               <p class="card-text">{{ product.description }}</p>
-              <a href="#" class="btn btn-primary">Add To Cart</a>
+              <a v-bind:href="`#/products/${product.id}`" class="btn btn-primary">LEARN MORE</a>
             </div>
           </div>
         </div>
@@ -29,24 +29,24 @@
     </div>
 
     <h1>ADD YOUR RECORD HERE</h1>
-    Name: <input v-model="newProductName" name="text" /> Price:
-    <input v-model="newProductPrice" name="decimal" /> Description:
-    <input v-model="newProductDescription" name="text" /> Supplier ID:
-    <input v-model="newProductSupplierId" name="integer" />
-      <div>
-       <button v-on:click="createProduct();" class="btn btn-primary">Create</button>
-      </div>
-      <div>
-        <ul>
-          <li v-for="error in errors" class="text-danger">{{error}}</li>
-        </ul>
-      </div>
+    Name: <input v-model="newProductName" name="text" /> 
+    Price: <input v-model="newProductPrice" name="decimal" /> 
+    Description: <input v-model="newProductDescription" name="text" />
+    Supplier ID: <input v-model="newProductSupplierId" name="integer" />
+    <div>
+     <button v-on:click="createProduct();" class="btn btn-primary">Create</button>
+    </div>
+    <div>
+      <ul>
+        <li v-for="error in errors" class="text-danger">{{error}}</li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <style></style>
-
 <script>
+
 var axios = require("axios");
 
 export default {
