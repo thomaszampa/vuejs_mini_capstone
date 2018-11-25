@@ -8,9 +8,17 @@
       />
     </div>
 
+    <div>
+      <h1>SEARCH RECORDS</h1>
+      <input type="text" v-model="searchFilter" list="names">
+      <datalist id="names">
+        <option v-for="product in products">{{ product.name }}</option>
+      </datalist>
+    </div>
+
     <div class="container">
       <div class="row mb-4 mt-4">
-        <div v-for="product in products" class="col-4 mt-4 mb-4 ">
+        <div v-for="product in filterBy(products, searchFilter, 'name')" class="col-4 mt-4 mb-4 ">
           <div class="card" style="width: 18rem;">
             <img
               class="card-img-top"
@@ -58,6 +66,7 @@ export default {
       newProductPrice: "",
       newProductDescription: "",
       newProductSupplierId: "",
+      searchFilter: "",
       errors: []
     };
   },
